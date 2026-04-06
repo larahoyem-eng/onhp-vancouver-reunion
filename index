@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONHP 2026 Reunion · Vancouver Island</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #2c4a3e;
+    --moss: #4a7c6f;
+    --sage: #8aab9e;
+    --mist: #e8ede9;
+    --stone: #6b6b60;
+    --parchment: #f5f2ec;
+    --gold: #b8925a;
+    --gold-light: #d4b483;
+    --ink: #1e2920;
+    --white: #fdfcfa;
+    --shadow: rgba(44, 74, 62, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--parchment);
+    color: var(--ink);
+    min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(138, 171, 158, 0.18) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(74, 124, 111, 0.12) 0%, transparent 60%);
+  }
+
+  .hero {
+    background: var(--forest);
+    color: var(--white);
+    padding: 52px 40px 44px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at 30% 50%, rgba(138,171,158,0.15) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 20%, rgba(184,146,90,0.1) 0%, transparent 45%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(36px, 6vw, 58px);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    margin-top: 6px;
+  }
+
+  .hero-divider {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    margin: 22px auto 0;
+    opacity: 0.6;
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  .intro-note {
+    background: var(--white);
+    border-left: 3px solid var(--gold);
+    padding: 18px 22px;
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--stone);
+    margin-bottom: 36px;
+    box-shadow: 0 2px 12px var(--shadow);
+  }
+
+  .intro-note strong { color: var(--forest); font-weight: 600; }
+
+  /* Section headers */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 36px 0 18px;
+  }
+
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--forest);
+    white-space: nowrap;
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--sage), transparent);
+    opacity: 0.5;
+  }
+
+  /* Fields */
+  .field-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 540px) {
+    .field-group { grid-template-columns: 1fr; }
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .field.full { grid-column: 1 / -1; }
+
+  label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--moss);
+  }
+
+  select, input[type="text"], textarea {
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 11px 14px;
+    border: 1.5px solid rgba(74, 124, 111, 0.25);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--ink);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234a7c6f' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+
+  select:focus, input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--moss);
+    box-shadow: 0 0 0 3px rgba(74, 124, 111, 0.12);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 72px;
+    line-height: 1.6;
+  }
+
+  /* Event cards */
+  .event-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 10px var(--shadow);
+    border: 1.5px solid transparent;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .event-card.selected {
+    border-color: var(--moss);
+    box-shadow: 0 2px 16px rgba(74, 124, 111, 0.15);
+  }
+
+  .event-card.always-included {
+    border-color: rgba(184, 146, 90, 0.3);
+    background: linear-gradient(135deg, var(--white), rgba(212, 180, 131, 0.06));
+  }
+
+  .event-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .event-checkbox {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border: 2px solid rgba(74, 124, 111, 0.35);
+    border-radius: 6px;
+    background: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    transition: background 0.15s, border-color 0.15s;
+    position: relative;
+  }
+
+  .event-checkbox.checked {
+    background: var(--moss);
+    border-color: var(--moss);
+  }
+
+  .event-checkbox.checked::after {
+    content: '';
+    width: 12px;
+    height: 7px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg) translateY(-2px);
+    display: block;
+  }
+
+  .event-checkbox.locked {
+    background: rgba(184, 146, 90, 0.15);
+    border-color: var(--gold);
+    cursor: default;
+  }
+
+  .event-checkbox.locked::after {
+    content: '✓';
+    font-size: 13px;
+    color: var(--gold);
+    line-height: 1;
+    transform: none;
+    border: none;
+    width: auto;
+    height: auto;
+  }
+
+  .event-info { flex: 1; }
+
+  .event-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--forest);
+    line-height: 1.2;
+  }
+
+  .event-meta {
+    display: flex;
+    gap: 14px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+  }
+
+  .event-date {
+    font-size: 12px;
+    color: var(--stone);
+    letter-spacing: 0.04em;
+  }
+
+  .event-price {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.03em;
+  }
+
+  .event-price.free {
+    color: var(--sage);
+    font-weight: 500;
+  }
+
+  .always-badge {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(184, 146, 90, 0.12);
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 1px solid rgba(184, 146, 90, 0.3);
+  }
+
+  .qty-row {
+    display: none;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--mist);
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .qty-row.visible { display: flex; }
+
+  .qty-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--stone);
+    letter-spacing: 0.05em;
+  }
+
+  .qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1.5px solid rgba(74, 124, 111, 0.25);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .qty-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: var(--parchment);
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--moss);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+    font-weight: 300;
+  }
+
+  .qty-btn:hover { background: var(--mist); }
+
+  .qty-display {
+    width: 40px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--forest);
+    background: var(--white);
+    padding: 0 6px;
+    line-height: 36px;
+    border-left: 1px solid rgba(74,124,111,0.15);
+    border-right: 1px solid rgba(74,124,111,0.15);
+  }
+
+  .qty-subtotal {
+    font-size: 13px;
+    color: var(--stone);
+    margin-left: auto;
+  }
+
+  .qty-subtotal span {
+    font-weight: 600;
+    color: var(--forest);
+  }
+
+  /* Guest names section */
+  .guest-names-area {
+    display: none;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(74,124,111,0.2);
+  }
+
+  .guest-names-area.visible { display: block; }
+
+  /* Fee summary sticky */
+  .fee-summary {
+    position: sticky;
+    bottom: 24px;
+    background: var(--forest);
+    color: var(--white);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-top: 32px;
+    box-shadow: 0 8px 32px rgba(30, 41, 32, 0.25);
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+
+  .fee-block {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .fee-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 4px;
+  }
+
+  .fee-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--white);
+  }
+
+  .fee-divider {
+    width: 1px;
+    height: 44px;
+    background: rgba(138, 171, 158, 0.3);
+    margin: 0 24px;
+  }
+
+  .fee-deposit .fee-amount {
+    color: var(--gold-light);
+  }
+
+  /* Submit */
+  .submit-section {
+    margin-top: 36px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 16px 32px;
+    background: var(--forest);
+    color: var(--white);
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 4px 16px rgba(44, 74, 62, 0.3);
+  }
+
+  .btn-submit:hover {
+    background: var(--moss);
+    transform: translateY(-1px);
+  }
+
+  .btn-submit:active { transform: translateY(0); }
+  .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  /* Confirmation modal */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 41, 32, 0.6);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    backdrop-filter: blur(4px);
+  }
+
+  .modal-overlay.visible { display: flex; }
+
+  .modal {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 36px;
+    max-width: 560px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 64px rgba(30, 41, 32, 0.3);
+  }
+
+  .modal h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--forest);
+    margin-bottom: 6px;
+  }
+
+  .modal-subtitle {
+    font-size: 13px;
+    color: var(--stone);
+    margin-bottom: 24px;
+  }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .summary-table tr {
+    border-bottom: 1px solid var(--mist);
+  }
+
+  .summary-table td {
+    padding: 9px 4px;
+    color: var(--ink);
+  }
+
+  .summary-table td:last-child {
+    text-align: right;
+    font-weight: 600;
+    color: var(--forest);
+    white-space: nowrap;
+  }
+
+  .summary-table .total-row td {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--forest);
+    padding-top: 14px;
+    border-bottom: none;
+  }
+
+  .summary-table .deposit-row td {
+    color: var(--gold);
+    font-size: 14px;
+    border-bottom: none;
+  }
+
+  .modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  .btn-secondary {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px 20px;
+    border: 1.5px solid var(--moss);
+    background: transparent;
+    color: var(--moss);
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .btn-secondary:hover { background: var(--moss); color: white; }
+
+  .btn-primary {
+    flex: 2;
+    min-width: 160px;
+    padding: 12px 20px;
+    background: var(--forest);
+    color: white;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .btn-primary:hover { background: var(--moss); }
+
+  .status-msg {
+    font-size: 13px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-top: 12px;
+    display: none;
+  }
+
+  .status-msg.success {
+    background: rgba(138, 171, 158, 0.2);
+    color: var(--forest);
+    border: 1px solid var(--sage);
+    display: block;
+  }
+
+  .status-msg.error {
+    background: rgba(200, 80, 80, 0.1);
+    color: #8b2c2c;
+    border: 1px solid rgba(200, 80, 80, 0.3);
+    display: block;
+  }
+
+  .required-mark { color: var(--gold); }
+
+  .script-note {
+    background: rgba(184, 146, 90, 0.08);
+    border: 1px solid rgba(184, 146, 90, 0.25);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 12.5px;
+    color: var(--stone);
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .script-note strong { color: var(--gold); }
+  .script-note code {
+    background: rgba(44,74,62,0.08);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 11.5px;
+    font-family: monospace;
+    color: var(--forest);
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">ONHP Class Reunion · October 2026</div>
+  <h1>Vancouver <em>Island</em></h1>
+  <div class="hero-sub">Tigh-na-Mara · Parksville, BC · Oct 1–7</div>
+  <div class="hero-divider"></div>
+</div>
+
+<div class="container">
+
+  <div class="intro-note">
+    Please fill in your name and indicate which activities you plan to attend. A <strong>50% deposit</strong> will be collected upfront to cover reservations — your remaining balance is due at the reunion. Fees shown are per person.
+  </div>
+
+  <div class="script-note">
+    <strong>⚙ Setup note:</strong> Replace <code>YOUR_SCRIPT_URL_HERE</code> in the JavaScript below with your deployed Google Apps Script Web App URL before sending this form to participants.
+  </div>
+
+  <!-- Identity -->
+  <div class="section-header">
+    <h2>Who's registering?</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="field-group">
+    <div class="field">
+      <label>Your name <span class="required-mark">*</span></label>
+      <select id="participant-name">
+        <option value="">— Select your name —</option>
+        <option>Alison</option>
+        <option>Barbara</option>
+        <option>Beth</option>
+        <option>Bonita</option>
+        <option>Catherine</option>
+        <option>Claudia</option>
+        <option>David</option>
+        <option>Errol</option>
+        <option>Gordon</option>
+        <option>Lara</option>
+        <option>Lisa</option>
+        <option>Maureen</option>
+        <option>Patty</option>
+        <option>Rahul</option>
+        <option>Ram</option>
+        <option>Richard</option>
+        <option>Robert</option>
+        <option>Rocky</option>
+        <option>Ron</option>
+        <option>Takaaki</option>
+        <option>Tushara</option>
+        <option>Alex</option>
+        <option>Laurance</option>
+        <option value="other">Other / Not listed</option>
+      </select>
+    </div>
+    <div class="field" id="other-name-field" style="display:none;">
+      <label>Enter your name</label>
+      <input type="text" id="other-name" placeholder="Your full name">
+    </div>
+  </div>
+
+  <div class="field" style="margin-top:14px;" id="guest-toggle-field">
+    <label style="display:flex;align-items:center;gap:10px;cursor:pointer;text-transform:none;font-size:14px;font-weight:400;letter-spacing:0;">
+      <input type="checkbox" id="has-guests" style="width:16px;height:16px;accent-color:var(--moss);">
+      I'm registering for activities on behalf of a guest (spouse, family member, friend)
+    </label>
+  </div>
+
+  <div class="guest-names-area" id="guest-names-area">
+    <div class="field" style="margin-top:10px;">
+      <label>Guest name(s)</label>
+      <input type="text" id="guest-names" placeholder="e.g. Jane Smith, Tom Smith">
+    </div>
+  </div>
+
+  <!-- Always included -->
+  <div class="section-header" style="margin-top:40px;">
+    <h2>Included for all</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="event-card always-included" id="card-food">
+    <div class="event-top">
+      <div class="event-checkbox locked"></div>
+      <div class="event-info">
+        <div class="event-name">Food &amp; Beverages Contribution</div>
+        <div class="event-meta">
+          <span class="event-date">Throughout the week</span>
+          <span class="event-price">$100 / person</span>
+          <span class="always-badge">Included for all</span>
+        </div>
+      </div>
+    </div>
+    <div class="qty-row visible" id="qty-row-food">
+      <span class="qty-label">Persons</span>
+      <div class="qty-controls">
+        <button class="qty-btn" onclick="changeQty('food', -1)">−</button>
+        <div class="qty-display" id="qty-food">1</div>
+        <button class="qty-btn" onclick="changeQty('food', 1)">+</button>
+      </div>
+      <div class="qty-subtotal">Subtotal: <span id="sub-food">$100</span></div>
+    </div>
+  </div>
+
+  <!-- Paid events -->
+  <div class="section-header" style="margin-top:32px;">
+    <h2>Activities &amp; Events</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- Welcome Dinner -->
+  <div class="event-card" id="card-dinner" onclick="toggleEvent('dinner', event)">
+    <div class="event-top">
+      <div class="event-checkbox" id="chk-dinner"></div>
+      <div class="event-info">
+        <div class="event-name">Welcome Dinner — Cedars Restaurant</div>
+        <div class="event-meta">
+          <span class="event-date">Thu Oct 1 · Evening</span>
+          <span class="event-price">$50 / person</span>
+        </div>
+      </div>
+    </div>
+    <div class="qty-row" id="qty-row-dinner">
+      <span class="qty-label">Persons</span>
+      <div class="qty-controls" onclick="stopProp(event)">
+        <button class="qty-btn" onclick="changeQty('dinner', -1)">−</button>
+        <div class="qty-display" id="qty-dinner">1</div>
+        <button class="qty-btn" onclick="changeQty('dinner', 1)">+</button>
+      </div>
+      <div class="qty-subtotal">Subtotal: <span id="sub-dinner">$50</span></div>
+    </div>
+  </div>
+
+  <!-- Forest Bathing -->
+  <div class="event-card" id="card-forest" onclick="toggleEvent('forest', event)">
+    <div class="event-top">
+      <div class="event-checkbox" id="chk-forest"></div>
+      <div class="event-info">
+        <div class="event-name">Forest Bathing — Guided Tour</div>
+        <div class="event-meta">
+          <span class="event-date">Fri Oct 2 · Morning (9:00am)</span>
+          <span class="event-price">$50 / person</span>
+        </div>
+      </div>
+    </div>
+    <div class="qty-row" id="qty-row-forest">
+      <span class="qty-label">Persons</span>
+      <div class="qty-controls" onclick="stopProp(event)">
+        <button class="qty-btn" onclick="changeQty('forest', -1)">−</button>
+        <div class="qty-display" id="qty-forest">1</div>
+        <button class="qty-btn" onclick="changeQty('forest', 1)">+</button>
+      </div>
+      <div class="qty-subtotal">Subtotal: <span id="sub-forest">$50</span></div>
+    </div>
+  </div>
+
+  <!-- Cathedral Grove -->
+  <div class="event-card" id="card-cathedral" onclick="toggleEvent('cathedral', event)">
+    <div class="event-top">
+      <div class="event-checkbox" id="chk-cathedral"></div>
+      <div class="event-info">
+        <div class="event-name">Cathedral Grove &amp; Coombs</div>
+        <div class="event-meta">
+          <span class="event-date">Sat Oct 3 · Morning (9:00am)</span>
+          <span class="event-price free">No fee</span>
+        </div>
+      </div>
+    </div>
+    <div class="qty-row" id="qty-row-cathedral">
+      <span class="qty-label">Persons</span>
+      <div class="qty-controls" onclick="stopProp(event)">
+        <button class="qty-btn" onclick="changeQty('cathedral', -1)">−</button>
+        <div class="qty-display" id="qty-cathedral">1</div>
+        <button class="qty-btn" onclick="changeQty('cathedral', 1)">+</button>
+      </div>
+      <div class="qty-subtotal">Subtotal: <span id="sub-cathedral">—</span></div>
+    </div>
+  </div>
+
+  <!-- Art Class -->
+  <div class="event-card" id="card-art" onclick="toggleEvent('art', event)">
+    <div class="event-top">
+      <div class="event-checkbox" id="chk-art"></div>
+      <div class="event-info">
+        <div class="event-name">Painting / Art Class — Old School House</div>
+        <div class="event-meta">
+          <span class="event-date">Sat Oct 3 · Afternoon</span>
+          <span class="event-price">$85 / person</span>
+        </div>
+      </div>
+    </div>
+    <div class="qty-row" id="qty-row-art">
+      <span class="qty-label">Persons</span>
+      <div class="qty-controls" onclick="stopProp(event)">
+        <button class="qty-btn" onclick="changeQty('art', -1)">−</button>
+        <div class="qty-display" id="qty-art">1</div>
+        <button class="qty-btn" onclick="changeQty('art', 1)">+</button>
+      </div>
+      <div class="qty-subtotal">Subtotal: <span id="sub-art">$85</span></div>
+    </div>
+  </div>
+
+  <!-- Satsatshun Tour -->
+  <div class="event-card" id="card-satsatshun" onclick="toggleEvent('satsatshun', event)">
+    <div class="event-top">
+      <div class="event-checkbox" id="chk-satsatshun"></div>
+      <div class="event-info">
+        <div class="event-name">Satsatshun Island Tour</div>
+        <div class="event-meta">
+          <span class="event-date">Sun Oct 4 · Morning (9:00am)</span>
+          <span class="event-price">$20 / person</span>
+        </div>
+      </div>
+    </div>
+    <div class="qty-row" id="qty-row-satsatshun">
+      <span class="qty-label">Persons</span>
+      <div class="qty-controls" onclick="stopProp(event)">
+        <button class="qty-btn" onclick="changeQty('satsatshun', -1)">−</button>
+        <div class="qty-display" id="qty-satsatshun">1</div>
+        <button class="qty-btn" onclick="changeQty('satsatshun', 1)">+</button>
+      </div>
+      <div class="qty-subtotal">Subtotal: <span id="sub-satsatshun">$20</span></div>
+    </div>
+  </div>
+
+  <!-- Afternoon Tea -->
+  <div class="event-card" id="card-tea" onclick="toggleEvent('tea', event)">
+    <div class="event-top">
+      <div class="event-checkbox" id="chk-tea"></div>
+      <div class="event-info">
+        <div class="event-name">Afternoon Tea — Black Goose Inn</div>
+        <div class="event-meta">
+          <span class="event-date">Sun Oct 4 · Afternoon</span>
+          <span class="event-price">$45 / person</span>
+        </div>
+      </div>
+    </div>
+    <div class="qty-row" id="qty-row-tea">
+      <span class="qty-label">Persons</span>
+      <div class="qty-controls" onclick="stopProp(event)">
+        <button class="qty-btn" onclick="changeQty('tea', -1)">−</button>
+        <div class="qty-display" id="qty-tea">1</div>
+        <button class="qty-btn" onclick="changeQty('tea', 1)">+</button>
+      </div>
+      <div class="qty-subtotal">Subtotal: <span id="sub-tea">$45</span></div>
+    </div>
+  </div>
+
+  <!-- Kayaking -->
+  <div class="event-card" id="card-kayak" onclick="toggleEvent('kayak', event)">
+    <div class="event-top">
+      <div class="event-checkbox" id="chk-kayak"></div>
+      <div class="event-info">
+        <div class="event-name">Kayaking</div>
+        <div class="event-meta">
+          <span class="event-date">Mon Oct 5 · Morning</span>
+          <span class="event-price">$100 / person</span>
+        </div>
+      </div>
+    </div>
+    <div class="qty-row" id="qty-row-kayak">
+      <span class="qty-label">Persons</span>
+      <div class="qty-controls" onclick="stopProp(event)">
+        <button class="qty-btn" onclick="changeQty('kayak', -1)">−</button>
+        <div class="qty-display" id="qty-kayak">1</div>
+        <button class="qty-btn" onclick="changeQty('kayak', 1)">+</button>
+      </div>
+      <div class="qty-subtotal">Subtotal: <span id="sub-kayak">$100</span></div>
+    </div>
+  </div>
+
+  <!-- Fishing / Sightseeing -->
+  <div class="event-card" id="card-fishing" onclick="toggleEvent('fishing', event)">
+    <div class="event-top">
+      <div class="event-checkbox" id="chk-fishing"></div>
+      <div class="event-info">
+        <div class="event-name">Fishing Boat / Sightseeing Boat</div>
+        <div class="event-meta">
+          <span class="event-date">Mon Oct 5 · Morning (early)</span>
+          <span class="event-price">$150 / person</span>
+        </div>
+      </div>
+    </div>
+    <div class="qty-row" id="qty-row-fishing">
+      <span class="qty-label">Persons</span>
+      <div class="qty-controls" onclick="stopProp(event)">
+        <button class="qty-btn" onclick="changeQty('fishing', -1)">−</button>
+        <div class="qty-display" id="qty-fishing">1</div>
+        <button class="qty-btn" onclick="changeQty('fishing', 1)">+</button>
+      </div>
+      <div class="qty-subtotal">Subtotal: <span id="sub-fishing">$150</span></div>
+    </div>
+  </div>
+
+  <!-- Whale Watching -->
+  <div class="event-card" id="card-whale" onclick="toggleEvent('whale', event)">
+    <div class="event-top">
+      <div class="event-checkbox" id="chk-whale"></div>
+      <div class="event-info">
+        <div class="event-name">Private Whale Watching Tour</div>
+        <div class="event-meta">
+          <span class="event-date">Tue Oct 6 · Morning</span>
+          <span class="event-price">$200 / person</span>
+        </div>
+      </div>
+    </div>
+    <div class="qty-row" id="qty-row-whale">
+      <span class="qty-label">Persons</span>
+      <div class="qty-controls" onclick="stopProp(event)">
+        <button class="qty-btn" onclick="changeQty('whale', -1)">−</button>
+        <div class="qty-display" id="qty-whale">1</div>
+        <button class="qty-btn" onclick="changeQty('whale', 1)">+</button>
+      </div>
+      <div class="qty-subtotal">Subtotal: <span id="sub-whale">$200</span></div>
+    </div>
+  </div>
+
+  <!-- Fee Summary -->
+  <div class="fee-summary">
+    <div class="fee-block">
+      <div class="fee-label">Total fees</div>
+      <div class="fee-amount" id="total-display">$100</div>
+    </div>
+    <div class="fee-divider"></div>
+    <div class="fee-block fee-deposit">
+      <div class="fee-label">50% deposit due now</div>
+      <div class="fee-amount" id="deposit-display">$50</div>
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <div class="submit-section">
+    <button class="btn-submit" id="submit-btn" onclick="openModal()">
+      Review &amp; Submit Registration
+    </button>
+    <div class="status-msg" id="status-msg"></div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- Confirmation Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <h3>Confirm your registration</h3>
+    <div class="modal-subtitle" id="modal-name-line">Please review your selections below.</div>
+
+    <table class="summary-table" id="summary-table"></table>
+
+    <div class="modal-actions">
+      <button class="btn-secondary" onclick="closeModal()">← Edit</button>
+      <button class="btn-primary" id="confirm-btn" onclick="submitForm()">Confirm &amp; Submit</button>
+    </div>
+    <div class="status-msg" id="modal-status"></div>
+  </div>
+</div>
+
+<script>
+// ── CONFIG ────────────────────────────────────────────────────────────
+const SCRIPT_URL = 'https://script.google.com/a/macros/alumni.stanford.edu/s/AKfycbyVA_9k1yzqiM1fWxh0gtM5Nn2BrIhp2tkh5a9Sy1VO6oD3vROos-9Edg9H-QnP-AUj/exec';
+const CONTACT_EMAIL = 'lhoyem@stanfordalumni.org'; // Replace with organizer email
+
+// ── EVENT DEFINITIONS ────────────────────────────────────────────────
+const EVENTS = {
+  food:        { label: 'Food & Beverages',           price: 100, always: true  },
+  dinner:      { label: 'Welcome Dinner',             price: 50,  always: false },
+  forest:      { label: 'Forest Bathing Tour',        price: 50,  always: false },
+  cathedral:   { label: 'Cathedral Grove & Coombs',   price: 0,   always: false },
+  art:         { label: 'Art Class',                  price: 85,  always: false },
+  satsatshun:  { label: 'Satsatshun Tour',            price: 20,  always: false },
+  tea:         { label: 'Afternoon Tea',              price: 45,  always: false },
+  kayak:       { label: 'Kayaking',                   price: 100, always: false },
+  fishing:     { label: 'Fishing / Sightseeing Boat', price: 150, always: false },
+  whale:       { label: 'Whale Watching',             price: 200, always: false },
+};
+
+// ── STATE ─────────────────────────────────────────────────────────────
+const state = {
+  food: { selected: true, qty: 1 },
+  dinner: { selected: false, qty: 1 },
+  forest: { selected: false, qty: 1 },
+  cathedral: { selected: false, qty: 1 },
+  art: { selected: false, qty: 1 },
+  satsatshun: { selected: false, qty: 1 },
+  tea: { selected: false, qty: 1 },
+  kayak: { selected: false, qty: 1 },
+  fishing: { selected: false, qty: 1 },
+  whale: { selected: false, qty: 1 },
+};
+
+function stopProp(e) { e.stopPropagation(); }
+
+function toggleEvent(key, e) {
+  if (e && e.target.closest('.qty-controls')) return;
+  if (EVENTS[key].always) return;
+  state[key].selected = !state[key].selected;
+  const card = document.getElementById('card-' + key);
+  const chk  = document.getElementById('chk-' + key);
+  const row  = document.getElementById('qty-row-' + key);
+  card.classList.toggle('selected', state[key].selected);
+  chk.classList.toggle('checked', state[key].selected);
+  row.classList.toggle('visible', state[key].selected);
+  updateTotals();
+}
+
+function changeQty(key, delta) {
+  const newQty = Math.min(3, Math.max(1, state[key].qty + delta));
+  state[key].qty = newQty;
+  document.getElementById('qty-' + key).textContent = newQty;
+  const price = EVENTS[key].price;
+  const sub = document.getElementById('sub-' + key);
+  if (price === 0) { sub.textContent = '—'; }
+  else { sub.textContent = '$' + (price * newQty).toLocaleString(); }
+  // Show guest name field if any qty > 1
+  checkGuestQty();
+  updateTotals();
+}
+
+function checkGuestQty() {
+  const anyMultiple = Object.keys(state).some(k => state[k].selected && state[k].qty > 1);
+  const hasGuestsChk = document.getElementById('has-guests');
+  if (anyMultiple && !hasGuestsChk.checked) {
+    hasGuestsChk.checked = true;
+    document.getElementById('guest-names-area').classList.add('visible');
+  }
+}
+
+function updateTotals() {
+  let total = 0;
+  for (const [key, ev] of Object.entries(EVENTS)) {
+    if (state[key].selected || ev.always) {
+      total += ev.price * state[key].qty;
+    }
+  }
+  document.getElementById('total-display').textContent  = '$' + total.toLocaleString();
+  document.getElementById('deposit-display').textContent = '$' + Math.ceil(total * 0.5).toLocaleString();
+}
+
+// Guest toggle
+document.getElementById('has-guests').addEventListener('change', function() {
+  document.getElementById('guest-names-area').classList.toggle('visible', this.checked);
+});
+
+// Other name
+document.getElementById('participant-name').addEventListener('change', function() {
+  document.getElementById('other-name-field').style.display =
+    this.value === 'other' ? 'flex' : 'none';
+});
+
+// ── MODAL ─────────────────────────────────────────────────────────────
+function getName() {
+  const sel = document.getElementById('participant-name').value;
+  if (sel === 'other') return document.getElementById('other-name').value.trim();
+  return sel;
+}
+
+function openModal() {
+  const name = getName();
+  if (!name) {
+    alert('Please select your name before continuing.');
+    return;
+  }
+
+  const guests = document.getElementById('guest-names').value.trim();
+  document.getElementById('modal-name-line').textContent =
+    guests ? `Registering: ${name} + ${guests}` : `Registering: ${name}`;
+
+  // Build summary table
+  let rows = '';
+  let total = 0;
+  for (const [key, ev] of Object.entries(EVENTS)) {
+    if (state[key].selected || ev.always) {
+      const lineTotal = ev.price * state[key].qty;
+      total += lineTotal;
+      const qtyLabel = state[key].qty > 1 ? ` × ${state[key].qty}` : '';
+      const priceStr = ev.price === 0 ? 'No fee' : '$' + lineTotal.toLocaleString();
+      rows += `<tr><td>${ev.label}${qtyLabel}</td><td>${priceStr}</td></tr>`;
+    }
+  }
+  const deposit = Math.ceil(total * 0.5);
+  rows += `<tr class="total-row"><td>Total</td><td>$${total.toLocaleString()}</td></tr>`;
+  rows += `<tr class="deposit-row"><td>50% deposit due now</td><td>$${deposit.toLocaleString()}</td></tr>`;
+  document.getElementById('summary-table').innerHTML = rows;
+
+  document.getElementById('modal-status').className = 'status-msg';
+  document.getElementById('confirm-btn').disabled = false;
+  document.getElementById('modal-overlay').classList.add('visible');
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('visible');
+}
+
+// ── SUBMIT ────────────────────────────────────────────────────────────
+async function submitForm() {
+  const name = getName();
+  const guests = document.getElementById('guest-names').value.trim();
+  const btn = document.getElementById('confirm-btn');
+  const statusEl = document.getElementById('modal-status');
+
+  btn.disabled = true;
+  btn.textContent = 'Submitting…';
+
+  // Build payload
+  let total = 0;
+  const payload = { name, guests, timestamp: new Date().toISOString() };
+  for (const [key, ev] of Object.entries(EVENTS)) {
+    const active = state[key].selected || ev.always;
+    payload[key + '_attending'] = active ? 'Y' : 'N';
+    payload[key + '_qty']       = active ? state[key].qty : 0;
+    if (active) total += ev.price * state[key].qty;
+  }
+  payload.total_fees   = total;
+  payload.deposit_due  = Math.ceil(total * 0.5);
+
+  // Build mailto as backup
+  const summaryLines = Object.entries(EVENTS)
+    .filter(([k, ev]) => state[k].selected || ev.always)
+    .map(([k, ev]) => `${ev.label} × ${state[k].qty}: $${ev.price * state[k].qty}`)
+    .join('\n');
+  const mailtoBody = encodeURIComponent(
+    `ONHP 2026 Reunion Registration\n\nName: ${name}${guests ? '\nGuests: ' + guests : ''}\n\n` +
+    `ACTIVITIES:\n${summaryLines}\n\nTotal: $${total}\nDeposit (50%): $${Math.ceil(total*0.5)}`
+  );
+  const mailtoLink = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('ONHP 2026 Registration – ' + name)}&body=${mailtoBody}`;
+
+  // Attempt sheet submission
+  if (SCRIPT_URL !== 'YOUR_SCRIPT_URL_HERE') {
+    try {
+      const res = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (data.result === 'success') {
+        statusEl.className = 'status-msg success';
+        statusEl.innerHTML = `✓ Registration recorded! You can also <a href="${mailtoLink}" style="color:var(--forest);font-weight:600;">send a confirmation email</a>.`;
+        btn.textContent = '✓ Submitted';
+        return;
+      }
+    } catch (e) {
+      // fall through to mailto
+    }
+  }
+
+  // Fallback: open mailto
+  statusEl.className = 'status-msg success';
+  statusEl.innerHTML = `Your email client will open with a pre-filled summary. Please send it to confirm your registration.`;
+  setTimeout(() => { window.location.href = mailtoLink; }, 400);
+  btn.textContent = 'Opening email…';
+}
+
+// Close modal on overlay click
+document.getElementById('modal-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// Init totals
+updateTotals();
+</script>
+</body>
+</html>

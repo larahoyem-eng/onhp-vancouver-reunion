@@ -1,0 +1,799 @@
+Onhp welcome · HTML
+Copy
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONHP 2026 Reunion · Welcome & Itinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #2c4a3e;
+    --moss: #4a7c6f;
+    --sage: #8aab9e;
+    --mist: #e8ede9;
+    --stone: #6b6b60;
+    --parchment: #f5f2ec;
+    --gold: #b8925a;
+    --gold-light: #d4b483;
+    --ink: #1e2920;
+    --white: #fdfcfa;
+    --shadow: rgba(44, 74, 62, 0.12);
+  }
+ 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--parchment);
+    color: var(--ink);
+    min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(138, 171, 158, 0.18) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(74, 124, 111, 0.12) 0%, transparent 60%);
+  }
+ 
+  /* ── HERO ── */
+  .hero {
+    background: var(--forest);
+    color: var(--white);
+    padding: 52px 40px 44px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at 30% 50%, rgba(138,171,158,0.15) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 20%, rgba(184,146,90,0.1) 0%, transparent 45%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(36px, 6vw, 58px);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold-light); }
+  .hero-sub {
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    margin-top: 6px;
+  }
+  .hero-divider {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    margin: 22px auto 0;
+    opacity: 0.6;
+  }
+ 
+  /* ── NAV ── */
+  .page-nav {
+    background: var(--white);
+    border-bottom: 1px solid rgba(74,124,111,0.15);
+    padding: 0 24px;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .page-nav a {
+    display: block;
+    padding: 14px 22px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--stone);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .page-nav a:hover, .page-nav a.active {
+    color: var(--forest);
+    border-bottom-color: var(--gold);
+  }
+ 
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+ 
+  /* ── LETTER ── */
+  .letter {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 36px 40px;
+    box-shadow: 0 2px 16px var(--shadow);
+    margin-bottom: 48px;
+    position: relative;
+  }
+  .letter::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    color: rgba(74,124,111,0.08);
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .letter p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .letter p:last-child { margin-bottom: 0; }
+  .letter .sign-off {
+    margin-top: 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--forest);
+    line-height: 1.6;
+  }
+ 
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 48px 0 24px;
+  }
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: var(--forest);
+    white-space: nowrap;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--sage), transparent);
+    opacity: 0.5;
+  }
+ 
+  /* ── ITINERARY ── */
+  .day-block {
+    margin-bottom: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px var(--shadow);
+  }
+ 
+  .day-header {
+    background: var(--forest);
+    color: var(--white);
+    padding: 14px 22px;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+  }
+  .day-header:hover { background: var(--moss); }
+ 
+  .day-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+  }
+  .day-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sage);
+    flex: 1;
+  }
+  .day-toggle {
+    font-size: 18px;
+    color: var(--gold-light);
+    transition: transform 0.25s;
+    line-height: 1;
+  }
+  .day-toggle.open { transform: rotate(180deg); }
+ 
+  .day-body {
+    background: var(--white);
+    display: none;
+  }
+  .day-body.open { display: block; }
+ 
+  .time-slot {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    border-bottom: 1px solid var(--mist);
+  }
+  .time-slot:last-child { border-bottom: none; }
+ 
+  .slot-time {
+    padding: 14px 16px 14px 22px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--moss);
+    background: rgba(138,171,158,0.06);
+    border-right: 1px solid var(--mist);
+    display: flex;
+    align-items: flex-start;
+    padding-top: 16px;
+  }
+ 
+  .slot-content {
+    padding: 14px 20px 14px 18px;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+ 
+  .slot-content a {
+    color: var(--moss);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(74,124,111,0.3);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .slot-content a:hover {
+    color: var(--forest);
+    border-bottom-color: var(--gold);
+  }
+ 
+  .event-pill {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 9px;
+    border-radius: 20px;
+    margin-left: 7px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+  .pill-fee {
+    background: rgba(184,146,90,0.12);
+    color: var(--gold);
+    border: 1px solid rgba(184,146,90,0.3);
+  }
+  .pill-free {
+    background: rgba(138,171,158,0.15);
+    color: var(--moss);
+    border: 1px solid rgba(138,171,158,0.35);
+  }
+  .pill-optional {
+    background: rgba(107,107,96,0.08);
+    color: var(--stone);
+    border: 1px solid rgba(107,107,96,0.2);
+  }
+ 
+  .week-note {
+    background: rgba(138,171,158,0.1);
+    border-left: 3px solid var(--sage);
+    padding: 12px 18px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--stone);
+    font-style: italic;
+    margin: 4px 0 0;
+  }
+ 
+  /* ── INFO CARDS ── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 4px;
+  }
+  @media (max-width: 560px) { .info-grid { grid-template-columns: 1fr; } }
+ 
+  .info-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 10px var(--shadow);
+  }
+  .info-card.full { grid-column: 1 / -1; }
+ 
+  .info-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .info-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 10px;
+  }
+  .info-card p, .info-card li {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--stone);
+  }
+  .info-card ul {
+    padding-left: 16px;
+    margin-top: 4px;
+  }
+  .info-card li { margin-bottom: 4px; }
+  .info-card a {
+    color: var(--moss);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(74,124,111,0.3);
+    transition: color 0.15s;
+  }
+  .info-card a:hover { color: var(--forest); }
+ 
+  /* ── FEES CARD ── */
+  .fees-card {
+    background: var(--forest);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 28px 32px;
+    box-shadow: 0 4px 20px rgba(44,74,62,0.25);
+    margin-top: 4px;
+  }
+  .fees-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 14px;
+  }
+  .fees-card p {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--sage);
+    margin-bottom: 10px;
+  }
+  .fees-card p:last-child { margin-bottom: 0; }
+  .fees-card strong { color: var(--gold-light); }
+ 
+  /* ── REGISTER CTA ── */
+  .cta-bar {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 28px 32px;
+    box-shadow: 0 2px 16px var(--shadow);
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .cta-text { flex: 1; min-width: 200px; }
+  .cta-text h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--forest);
+    margin-bottom: 4px;
+  }
+  .cta-text p { font-size: 14px; color: var(--stone); line-height: 1.6; }
+  .btn-cta {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--forest);
+    color: var(--white);
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 4px 14px rgba(44,74,62,0.25);
+    white-space: nowrap;
+  }
+  .btn-cta:hover { background: var(--moss); transform: translateY(-1px); }
+ 
+  @media (max-width: 480px) {
+    .time-slot { grid-template-columns: 90px 1fr; }
+    .letter { padding: 24px 22px; }
+  }
+</style>
+</head>
+<body>
+ 
+<div class="hero">
+  <div class="hero-eyebrow">ONHP Class Reunion · October 2026</div>
+  <h1>Vancouver <em>Island</em></h1>
+  <div class="hero-sub">Tigh-na-Mara · Parksville, BC · Oct 1–7</div>
+  <div class="hero-divider"></div>
+</div>
+ 
+<nav class="page-nav">
+  <a href="#" class="active">Welcome & Itinerary</a>
+  <a href="index.html">Register & Pay</a>
+</nav>
+ 
+<div class="container">
+ 
+  <!-- Letter -->
+  <div class="letter">
+    <p>Hello, friends,</p>
+    <p>Please see below the latest tentative itinerary for our time together. It will surely change, but this is intended to whet your appetite for the adventure. I've also included a few other topics of interest — do let me know if there are other things you'd like to hear about.</p>
+    <p>In May, I'll reach out about a downpayment on the program cost so I can make some bookings. Closer to our gathering, I'll reach out with: confirmation of your October 5th activity choices, information about dietary restrictions, and scheduling for airport and ferry pick-ups/drop-offs.</p>
+    <div class="sign-off">
+      With thanks, and anticipation!<br>
+      Alison (and team Catherine and Lara)
+    </div>
+  </div>
+ 
+  <!-- Itinerary -->
+  <div class="section-header">
+    <h2>The Itinerary</h2>
+    <div class="section-line"></div>
+  </div>
+ 
+  <!-- Day 1 -->
+  <div class="day-block">
+    <div class="day-header" onclick="toggleDay(this)">
+      <span class="day-date">Thursday, October 1</span>
+      <span class="day-label">Arrival Day</span>
+      <span class="day-toggle">▾</span>
+    </div>
+    <div class="day-body open">
+      <div class="time-slot">
+        <div class="slot-time">Morning &amp; Afternoon</div>
+        <div class="slot-content">
+          Alison, Lara, and Catherine will pick up passengers from <strong>YCD / Nanaimo Airport</strong>, <strong>Duke Point Ferry</strong>, or <strong>Hullo Ferry</strong>.<br>
+          <span style="color:var(--stone);font-size:13.5px;">Early arrivals are welcome to hang out at Alison, Gordon, and Catherine's suite while you wait for check-in.</span>
+        </div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Evening</div>
+        <div class="slot-content">
+          <strong>5:00pm</strong> — Check in at <a href="https://tigh-na-mara.com/" target="_blank">Tigh-na-Mara Resort</a><br><br>
+          <strong>6:00pm</strong> — Welcome Dinner at <a href="https://tigh-na-mara.com/dine/cedars-restaurant-lounge" target="_blank">Cedars Restaurant</a> (set menu — <a href="https://tigh-na-mara.com/files/documents/5361038b-113a-4ab3-a306-eaa6a1b1a39c.pdf" target="_blank">sample group menu here</a>)
+          <span class="event-pill pill-fee">Fee · $50</span>
+        </div>
+      </div>
+      <div class="week-note">
+        Available throughout the week: yoga with Rocky · optional hikes and outings · the spa · beach walks · free time to explore and visit
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Day 2 -->
+  <div class="day-block">
+    <div class="day-header" onclick="toggleDay(this)">
+      <span class="day-date">Friday, October 2</span>
+      <span class="day-label">Forest &amp; Coast</span>
+      <span class="day-toggle">▾</span>
+    </div>
+    <div class="day-body open">
+      <div class="time-slot">
+        <div class="slot-time">Morning</div>
+        <div class="slot-content">
+          <a href="https://www.salishseaforesttherapy.ca/" target="_blank">Forest bathing guided tour</a>
+          <span class="event-pill pill-fee">Fee · $50</span>
+        </div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Lunch</div>
+        <div class="slot-content"><a href="https://www.nanoosebaycafe.com/" target="_blank">Nanoose Bay Café</a></div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Afternoon</div>
+        <div class="slot-content">
+          Free time<br>
+          <span style="color:var(--stone);">Optional: trip to the grocery store in Parksville for room food and snacks</span>
+        </div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Early Evening</div>
+        <div class="slot-content">
+          <strong>5:00–7:00pm</strong> — Hors d'oeuvres and conversation<br>
+          <em style="color:var(--stone);font-size:13.5px;">Theme: Life Updates</em>
+        </div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Evening</div>
+        <div class="slot-content" style="color:var(--stone);">Free time</div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Day 3 -->
+  <div class="day-block">
+    <div class="day-header" onclick="toggleDay(this)">
+      <span class="day-date">Saturday, October 3</span>
+      <span class="day-label">Old Growth &amp; Art</span>
+      <span class="day-toggle">▾</span>
+    </div>
+    <div class="day-body open">
+      <div class="time-slot">
+        <div class="slot-time">Morning</div>
+        <div class="slot-content">
+          Trip to <a href="https://www.visitparksvillequalicumbeach.com/things-to-do/parks-nature/cathedral-grove/#jlthings-to-see" target="_blank">Cathedral Grove</a> — home to ancient old-growth giant trees — with a possible stop at <a href="https://oldcountrymarket.com/" target="_blank">Coombs Old Country Market</a> on the way back
+          <span class="event-pill pill-free">Free</span>
+        </div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Lunch</div>
+        <div class="slot-content"><a href="https://shadyrest.ca/" target="_blank">Shady Rest Pub</a>, Qualicum Beach — right on the beach</div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Afternoon</div>
+        <div class="slot-content">
+          Free time<br>
+          <span style="color:var(--stone);">Optional: Painting / art class at The Old School House art centre in Qualicum Beach</span>
+          <span class="event-pill pill-optional">Optional · $85</span>
+        </div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Early Evening</div>
+        <div class="slot-content">
+          <strong>5:00–7:00pm</strong> — Hors d'oeuvres and conversation<br>
+          <em style="color:var(--stone);font-size:13.5px;">Theme: Truth and Reconciliation with <a href="https://letstalkscience.ca/news-media/lets-talk-science-appoints-dr-deborah-saucier-director-indigenous-initiatives" target="_blank">Dr. Deborah Saucier</a></em>
+        </div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Evening</div>
+        <div class="slot-content" style="color:var(--stone);">Free time</div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Day 4 -->
+  <div class="day-block">
+    <div class="day-header" onclick="toggleDay(this)">
+      <span class="day-date">Sunday, October 4</span>
+      <span class="day-label">Island &amp; Culture</span>
+      <span class="day-toggle">▾</span>
+    </div>
+    <div class="day-body open">
+      <div class="time-slot">
+        <div class="slot-time">Morning</div>
+        <div class="slot-content">
+          <strong>9:00am</strong> — Tour of <a href="https://newcastleisland.ca/cultural-experiences" target="_blank">Saysutshun Island</a> with a Snuneymuxw (pronounced <em>snue-ney-mowck</em>) guide
+          <span class="event-pill pill-fee">Fee · $20</span>
+          <br><span style="color:var(--stone);font-size:13px;">Subject to tours being offered in October — dates not yet confirmed.</span>
+        </div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Lunch</div>
+        <div class="slot-content"><a href="https://www.lighthousebistro.ca/bistro" target="_blank">Lighthouse Bistro</a> — watch the float planes coming into Nanaimo Harbour</div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Afternoon</div>
+        <div class="slot-content">
+          Free time<br>
+          <span style="color:var(--stone);">Optional: Afternoon tea at the Black Goose Inn</span>
+          <span class="event-pill pill-optional">Optional · $45</span>
+        </div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Early Evening</div>
+        <div class="slot-content">
+          <strong>5:00–7:00pm</strong> — Hors d'oeuvres and conversation<br>
+          <em style="color:var(--stone);font-size:13.5px;">Theme: Canada, the "Carney Doctrine," and the Next World Order</em>
+        </div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Evening</div>
+        <div class="slot-content" style="color:var(--stone);">Free time</div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Day 5 -->
+  <div class="day-block">
+    <div class="day-header" onclick="toggleDay(this)">
+      <span class="day-date">Monday, October 5</span>
+      <span class="day-label">Adventure Day</span>
+      <span class="day-toggle">▾</span>
+    </div>
+    <div class="day-body open">
+      <div class="time-slot">
+        <div class="slot-time">Morning</div>
+        <div class="slot-content">
+          <strong>Activity One — Kayaking</strong>
+          <span class="event-pill pill-fee">Fee · $100</span><br>
+          <span style="color:var(--stone);font-size:13.5px;">Group I: 8:00–11:00am &nbsp;·&nbsp; Group II: 11:00am–2:00pm</span><br><br>
+          <strong>Activity Two — Fishing or Sightseeing Boat</strong>
+          <span class="event-pill pill-fee">Fee · $150</span><br>
+          <span style="color:var(--stone);font-size:13.5px;">Fishing Boat Group or Sightseeing Boat Group (early departure, TBC)</span>
+        </div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Lunch</div>
+        <div class="slot-content">Picnic provided</div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Afternoon</div>
+        <div class="slot-content">
+          <span style="color:var(--stone);">Optional: 3:00pm onward at Alison and Gordon's house</span>
+        </div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Early Evening</div>
+        <div class="slot-content">
+          <strong>5:00–7:00pm</strong> — Fish BBQ and dinner at Alison and Gordon's house (with non-fish options)<br>
+          <em style="color:var(--stone);font-size:13.5px;">Theme: What's in your year and how can the group help?</em>
+        </div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Evening</div>
+        <div class="slot-content" style="color:var(--stone);">Free time</div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Day 6 -->
+  <div class="day-block">
+    <div class="day-header" onclick="toggleDay(this)">
+      <span class="day-date">Tuesday, October 6</span>
+      <span class="day-label">Whales &amp; Farewell</span>
+      <span class="day-toggle">▾</span>
+    </div>
+    <div class="day-body open">
+      <div class="time-slot">
+        <div class="slot-time">Morning</div>
+        <div class="slot-content">
+          Private whale watching tour
+          <span class="event-pill pill-fee">Fee · $200</span>
+        </div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Lunch</div>
+        <div class="slot-content"><a href="https://rockinghorsepub.ca/" target="_blank">Rocking Horse Pub</a></div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Afternoon</div>
+        <div class="slot-content">
+          Free time<br>
+          <span style="color:var(--stone);">Optional: <a href="https://pentlatchgallery.com/" target="_blank">Pentlatch Gallery</a> (Indigenous arts and crafts) and/or <a href="https://stjeans.com/" target="_blank">St. Jean's Cannery</a> for smoked fish — great for gifts and easy to pack</span>
+        </div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Early Evening</div>
+        <div class="slot-content">
+          <strong>6:00pm</strong> — Closing dinner at <a href="https://blackgooseinn.com/" target="_blank">Black Goose Inn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Day 7 -->
+  <div class="day-block">
+    <div class="day-header" onclick="toggleDay(this)">
+      <span class="day-date">Wednesday, October 7</span>
+      <span class="day-label">Departure</span>
+      <span class="day-toggle">▾</span>
+    </div>
+    <div class="day-body open">
+      <div class="time-slot">
+        <div class="slot-time">Morning</div>
+        <div class="slot-content" style="color:var(--stone);">Departures — transport coordinated to YCD, Duke Point Ferry, and Hullo Ferry</div>
+      </div>
+      <div class="time-slot">
+        <div class="slot-time">Afternoon</div>
+        <div class="slot-content" style="color:var(--stone);">Additional departures</div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Program Fee -->
+  <div class="section-header">
+    <h2>Program Fee</h2>
+    <div class="section-line"></div>
+  </div>
+ 
+  <div class="fees-card">
+    <h3>What's covered</h3>
+    <p>The program fee covers excursion costs, lunches, three suppers, evening hors d'oeuvres and drinks, and any extra costs for local transportation. Several of us will have cars, so we may need to rent only one or two additional vehicles.</p>
+    <p>The total cost is not yet finalized but will be modest. <strong>In May, an initial payment of CAD $500 per participant</strong> will be requested to pre-pay some of our excursions. More details to come.</p>
+  </div>
+ 
+  <!-- Good to Know -->
+  <div class="section-header">
+    <h2>Good to Know</h2>
+    <div class="section-line"></div>
+  </div>
+ 
+  <div class="info-grid">
+ 
+    <div class="info-card">
+      <span class="info-icon">🌦</span>
+      <h3>Weather</h3>
+      <p>Early October can be beautiful and sunny (high teens °C) or cool and rainy. Pack a fleece or light puffer jacket and a raincoat. Bring an extra pair of shoes for water activities.</p>
+    </div>
+ 
+    <div class="info-card">
+      <span class="info-icon">🦅</span>
+      <h3>Wildlife</h3>
+      <p>Expect seabirds, eagles, seals, sea lions, and whales. Possible sea otters and dolphins. On shore: oysters, clams, sea stars, sand dollars, sea anemones. Deer are ubiquitous on land — take care when driving. Bears and cougars are very unlikely.</p>
+      <p style="margin-top:8px;font-size:13px;color:#999;">Check before harvesting any shellfish — rules apply on when and where.</p>
+    </div>
+ 
+    <div class="info-card">
+      <span class="info-icon">💸</span>
+      <h3>Taxes &amp; Tipping</h3>
+      <ul>
+        <li>Grocery food: no sales tax</li>
+        <li>Most purchases: +12% (5% GST + 7% BC PST)</li>
+        <li>Alcohol: +15% tax; sold in special stores only</li>
+        <li>Gas: currently over $2/litre, taxes included</li>
+        <li>Restaurant tips: 15% minimum, 18% now common</li>
+        <li>Uber/taxi: 10% typical</li>
+      </ul>
+    </div>
+ 
+    <div class="info-card">
+      <span class="info-icon">🚗</span>
+      <h3>Getting Around</h3>
+      <p>Uber is available in Parksville but not at the airport. Taxis are available. Public transit is very limited. Several of us will have cars — we may rent one or two additional vehicles for the week.</p>
+    </div>
+ 
+    <div class="info-card full">
+      <span class="info-icon">🍁</span>
+      <h3>Culture Notes</h3>
+      <p>Want a flavour of life here? Subscribe to the local <a href="https://cheknews.ca/" target="_blank">CHEK News newsletter</a> (sign up at the bottom of their page).</p>
+      <p style="margin-top:10px;">First-time visitors to Canada: it's very much like the US (outside Quebec), but there are differences. This <a href="https://thecanadaguide.com/culture/manners-and-etiquette/" target="_blank">etiquette guide</a> is a reasonable primer — and there's a chapter on <a href="https://thecanadaguide.com/culture/anti-americanism/" target="_blank">anti-American sentiment</a> (written pre-Trump, mind you).</p>
+    </div>
+ 
+  </div>
+ 
+  <!-- CTA -->
+  <div class="cta-bar">
+    <div class="cta-text">
+      <h3>Ready to confirm your activities?</h3>
+      <p>Select your events, add guests, and see your fee breakdown — including the 50% deposit due in May.</p>
+    </div>
+    <a href="index.html" class="btn-cta">Register &amp; Calculate Fees →</a>
+  </div>
+ 
+</div><!-- /container -->
+ 
+<script>
+  function toggleDay(header) {
+    const body = header.nextElementSibling;
+    const arrow = header.querySelector('.day-toggle');
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    arrow.classList.toggle('open', !isOpen);
+  }
+ 
+  // Highlight active nav link based on current page
+  const currentPage = window.location.pathname.split('/').pop();
+  document.querySelectorAll('.page-nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === currentPage || 
+      (currentPage === '' && a.classList.contains('active')));
+  });
+</script>
+ 
+</body>
+</html>

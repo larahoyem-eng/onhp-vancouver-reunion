@@ -1,6 +1,3 @@
-Onhp welcome · HTML
-Copy
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,9 +19,9 @@ Copy
     --white: #fdfcfa;
     --shadow: rgba(44, 74, 62, 0.12);
   }
- 
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
- 
+
   body {
     font-family: 'Jost', sans-serif;
     background: var(--parchment);
@@ -34,7 +31,7 @@ Copy
       radial-gradient(ellipse at 20% 0%, rgba(138, 171, 158, 0.18) 0%, transparent 60%),
       radial-gradient(ellipse at 80% 100%, rgba(74, 124, 111, 0.12) 0%, transparent 60%);
   }
- 
+
   /* ── HERO ── */
   .hero {
     background: var(--forest);
@@ -85,7 +82,7 @@ Copy
     margin: 22px auto 0;
     opacity: 0.6;
   }
- 
+
   /* ── NAV ── */
   .page-nav {
     background: var(--white);
@@ -115,14 +112,14 @@ Copy
     color: var(--forest);
     border-bottom-color: var(--gold);
   }
- 
+
   /* ── CONTAINER ── */
   .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 48px 24px 80px;
   }
- 
+
   /* ── LETTER ── */
   .letter {
     background: var(--white);
@@ -158,7 +155,7 @@ Copy
     color: var(--forest);
     line-height: 1.6;
   }
- 
+
   /* ── SECTION HEADERS ── */
   .section-header {
     display: flex;
@@ -179,7 +176,7 @@ Copy
     background: linear-gradient(to right, var(--sage), transparent);
     opacity: 0.5;
   }
- 
+
   /* ── ITINERARY ── */
   .day-block {
     margin-bottom: 12px;
@@ -187,7 +184,7 @@ Copy
     overflow: hidden;
     box-shadow: 0 2px 10px var(--shadow);
   }
- 
+
   .day-header {
     background: var(--forest);
     color: var(--white);
@@ -200,7 +197,7 @@ Copy
     transition: background 0.2s;
   }
   .day-header:hover { background: var(--moss); }
- 
+
   .day-date {
     font-family: 'Cormorant Garamond', serif;
     font-size: 20px;
@@ -222,20 +219,20 @@ Copy
     line-height: 1;
   }
   .day-toggle.open { transform: rotate(180deg); }
- 
+
   .day-body {
     background: var(--white);
     display: none;
   }
   .day-body.open { display: block; }
- 
+
   .time-slot {
     display: grid;
     grid-template-columns: 130px 1fr;
     border-bottom: 1px solid var(--mist);
   }
   .time-slot:last-child { border-bottom: none; }
- 
+
   .slot-time {
     padding: 14px 16px 14px 22px;
     font-size: 11px;
@@ -249,14 +246,14 @@ Copy
     align-items: flex-start;
     padding-top: 16px;
   }
- 
+
   .slot-content {
     padding: 14px 20px 14px 18px;
     font-size: 14.5px;
     line-height: 1.7;
     color: var(--ink);
   }
- 
+
   .slot-content a {
     color: var(--moss);
     text-decoration: none;
@@ -267,7 +264,7 @@ Copy
     color: var(--forest);
     border-bottom-color: var(--gold);
   }
- 
+
   .event-pill {
     display: inline-block;
     font-size: 10.5px;
@@ -296,7 +293,7 @@ Copy
     color: var(--stone);
     border: 1px solid rgba(107,107,96,0.2);
   }
- 
+
   .week-note {
     background: rgba(138,171,158,0.1);
     border-left: 3px solid var(--sage);
@@ -307,7 +304,7 @@ Copy
     font-style: italic;
     margin: 4px 0 0;
   }
- 
+
   /* ── INFO CARDS ── */
   .info-grid {
     display: grid;
@@ -316,7 +313,7 @@ Copy
     margin-top: 4px;
   }
   @media (max-width: 560px) { .info-grid { grid-template-columns: 1fr; } }
- 
+
   .info-card {
     background: var(--white);
     border-radius: 12px;
@@ -324,7 +321,7 @@ Copy
     box-shadow: 0 2px 10px var(--shadow);
   }
   .info-card.full { grid-column: 1 / -1; }
- 
+
   .info-icon {
     font-size: 24px;
     margin-bottom: 10px;
@@ -354,7 +351,7 @@ Copy
     transition: color 0.15s;
   }
   .info-card a:hover { color: var(--forest); }
- 
+
   /* ── FEES CARD ── */
   .fees-card {
     background: var(--forest);
@@ -379,7 +376,7 @@ Copy
   }
   .fees-card p:last-child { margin-bottom: 0; }
   .fees-card strong { color: var(--gold-light); }
- 
+
   /* ── REGISTER CTA ── */
   .cta-bar {
     background: var(--white);
@@ -417,7 +414,7 @@ Copy
     white-space: nowrap;
   }
   .btn-cta:hover { background: var(--moss); transform: translateY(-1px); }
- 
+
   @media (max-width: 480px) {
     .time-slot { grid-template-columns: 90px 1fr; }
     .letter { padding: 24px 22px; }
@@ -425,21 +422,21 @@ Copy
 </style>
 </head>
 <body>
- 
+
 <div class="hero">
   <div class="hero-eyebrow">ONHP Class Reunion · October 2026</div>
   <h1>Vancouver <em>Island</em></h1>
   <div class="hero-sub">Tigh-na-Mara · Parksville, BC · Oct 1–7</div>
   <div class="hero-divider"></div>
 </div>
- 
+
 <nav class="page-nav">
   <a href="#" class="active">Welcome & Itinerary</a>
   <a href="index.html">Register & Pay</a>
 </nav>
- 
+
 <div class="container">
- 
+
   <!-- Letter -->
   <div class="letter">
     <p>Hello, friends,</p>
@@ -450,13 +447,13 @@ Copy
       Alison (and team Catherine and Lara)
     </div>
   </div>
- 
+
   <!-- Itinerary -->
   <div class="section-header">
     <h2>The Itinerary</h2>
     <div class="section-line"></div>
   </div>
- 
+
   <!-- Day 1 -->
   <div class="day-block">
     <div class="day-header" onclick="toggleDay(this)">
@@ -485,7 +482,7 @@ Copy
       </div>
     </div>
   </div>
- 
+
   <!-- Day 2 -->
   <div class="day-block">
     <div class="day-header" onclick="toggleDay(this)">
@@ -525,7 +522,7 @@ Copy
       </div>
     </div>
   </div>
- 
+
   <!-- Day 3 -->
   <div class="day-block">
     <div class="day-header" onclick="toggleDay(this)">
@@ -566,7 +563,7 @@ Copy
       </div>
     </div>
   </div>
- 
+
   <!-- Day 4 -->
   <div class="day-block">
     <div class="day-header" onclick="toggleDay(this)">
@@ -608,7 +605,7 @@ Copy
       </div>
     </div>
   </div>
- 
+
   <!-- Day 5 -->
   <div class="day-block">
     <div class="day-header" onclick="toggleDay(this)">
@@ -651,7 +648,7 @@ Copy
       </div>
     </div>
   </div>
- 
+
   <!-- Day 6 -->
   <div class="day-block">
     <div class="day-header" onclick="toggleDay(this)">
@@ -686,7 +683,7 @@ Copy
       </div>
     </div>
   </div>
- 
+
   <!-- Day 7 -->
   <div class="day-block">
     <div class="day-header" onclick="toggleDay(this)">
@@ -705,40 +702,40 @@ Copy
       </div>
     </div>
   </div>
- 
+
   <!-- Program Fee -->
   <div class="section-header">
     <h2>Program Fee</h2>
     <div class="section-line"></div>
   </div>
- 
+
   <div class="fees-card">
     <h3>What's covered</h3>
     <p>The program fee covers excursion costs, lunches, three suppers, evening hors d'oeuvres and drinks, and any extra costs for local transportation. Several of us will have cars, so we may need to rent only one or two additional vehicles.</p>
     <p>The total cost is not yet finalized but will be modest. <strong>In May, an initial payment of CAD $500 per participant</strong> will be requested to pre-pay some of our excursions. More details to come.</p>
   </div>
- 
+
   <!-- Good to Know -->
   <div class="section-header">
     <h2>Good to Know</h2>
     <div class="section-line"></div>
   </div>
- 
+
   <div class="info-grid">
- 
+
     <div class="info-card">
       <span class="info-icon">🌦</span>
       <h3>Weather</h3>
       <p>Early October can be beautiful and sunny (high teens °C) or cool and rainy. Pack a fleece or light puffer jacket and a raincoat. Bring an extra pair of shoes for water activities.</p>
     </div>
- 
+
     <div class="info-card">
       <span class="info-icon">🦅</span>
       <h3>Wildlife</h3>
       <p>Expect seabirds, eagles, seals, sea lions, and whales. Possible sea otters and dolphins. On shore: oysters, clams, sea stars, sand dollars, sea anemones. Deer are ubiquitous on land — take care when driving. Bears and cougars are very unlikely.</p>
       <p style="margin-top:8px;font-size:13px;color:#999;">Check before harvesting any shellfish — rules apply on when and where.</p>
     </div>
- 
+
     <div class="info-card">
       <span class="info-icon">💸</span>
       <h3>Taxes &amp; Tipping</h3>
@@ -751,22 +748,22 @@ Copy
         <li>Uber/taxi: 10% typical</li>
       </ul>
     </div>
- 
+
     <div class="info-card">
       <span class="info-icon">🚗</span>
       <h3>Getting Around</h3>
       <p>Uber is available in Parksville but not at the airport. Taxis are available. Public transit is very limited. Several of us will have cars — we may rent one or two additional vehicles for the week.</p>
     </div>
- 
+
     <div class="info-card full">
       <span class="info-icon">🍁</span>
       <h3>Culture Notes</h3>
       <p>Want a flavour of life here? Subscribe to the local <a href="https://cheknews.ca/" target="_blank">CHEK News newsletter</a> (sign up at the bottom of their page).</p>
       <p style="margin-top:10px;">First-time visitors to Canada: it's very much like the US (outside Quebec), but there are differences. This <a href="https://thecanadaguide.com/culture/manners-and-etiquette/" target="_blank">etiquette guide</a> is a reasonable primer — and there's a chapter on <a href="https://thecanadaguide.com/culture/anti-americanism/" target="_blank">anti-American sentiment</a> (written pre-Trump, mind you).</p>
     </div>
- 
+
   </div>
- 
+
   <!-- CTA -->
   <div class="cta-bar">
     <div class="cta-text">
@@ -775,9 +772,9 @@ Copy
     </div>
     <a href="index.html" class="btn-cta">Register &amp; Calculate Fees →</a>
   </div>
- 
+
 </div><!-- /container -->
- 
+
 <script>
   function toggleDay(header) {
     const body = header.nextElementSibling;
@@ -786,7 +783,7 @@ Copy
     body.classList.toggle('open', !isOpen);
     arrow.classList.toggle('open', !isOpen);
   }
- 
+
   // Highlight active nav link based on current page
   const currentPage = window.location.pathname.split('/').pop();
   document.querySelectorAll('.page-nav a').forEach(a => {
@@ -794,6 +791,6 @@ Copy
       (currentPage === '' && a.classList.contains('active')));
   });
 </script>
- 
+
 </body>
 </html>

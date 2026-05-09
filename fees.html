@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONHP 2026 Reunion · Fees & Payment</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #2c4a3e;
+    --moss: #4a7c6f;
+    --sage: #8aab9e;
+    --mist: #e8ede9;
+    --stone: #6b6b60;
+    --parchment: #f5f2ec;
+    --gold: #b8925a;
+    --gold-light: #d4b483;
+    --ink: #1e2920;
+    --white: #fdfcfa;
+    --shadow: rgba(44, 74, 62, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--parchment);
+    color: var(--ink);
+    min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(138, 171, 158, 0.18) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(74, 124, 111, 0.12) 0%, transparent 60%);
+  }
+
+  .hero {
+    background: var(--forest);
+    color: var(--white);
+    padding: 52px 40px 44px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at 30% 50%, rgba(138,171,158,0.15) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 20%, rgba(184,146,90,0.1) 0%, transparent 45%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(36px, 6vw, 58px);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold-light); }
+  .hero-sub {
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    color: var(--sage);
+    margin-top: 6px;
+  }
+  .hero-divider {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    margin: 22px auto 0;
+    opacity: 0.6;
+  }
+
+  .page-nav {
+    background: var(--white);
+    border-bottom: 1px solid rgba(74,124,111,0.15);
+    padding: 0 24px;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 2px 8px var(--shadow);
+    flex-wrap: wrap;
+  }
+  .page-nav a {
+    display: block;
+    padding: 14px 22px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--stone);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+  .page-nav a:hover, .page-nav a.active {
+    color: var(--forest);
+    border-bottom-color: var(--gold);
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* Letter */
+  .letter {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 36px 40px;
+    box-shadow: 0 2px 16px var(--shadow);
+    margin-bottom: 44px;
+    position: relative;
+  }
+  .letter::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    color: rgba(74,124,111,0.08);
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .letter p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .letter p:last-child { margin-bottom: 0; }
+  .letter .sign-off {
+    margin-top: 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--forest);
+    line-height: 1.6;
+  }
+
+  .fee-highlight {
+    display: inline;
+    font-weight: 600;
+    color: var(--forest);
+  }
+
+  .fee-highlight.gold { color: var(--gold); }
+
+  /* Section headers */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 44px 0 22px;
+  }
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: var(--forest);
+    white-space: nowrap;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--sage), transparent);
+    opacity: 0.5;
+  }
+
+  /* Payment method cards */
+  .payment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 560px) {
+    .payment-grid { grid-template-columns: 1fr; }
+  }
+
+  .payment-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 10px var(--shadow);
+    border-top: 3px solid var(--sage);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .payment-card.featured {
+    border-top-color: var(--gold);
+  }
+
+  .payment-number {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--forest);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .payment-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .payment-method {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--forest);
+  }
+
+  .payment-amount {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    background: rgba(184,146,90,0.1);
+    border: 1px solid rgba(184,146,90,0.25);
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 2px;
+  }
+
+  .payment-body {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--stone);
+  }
+
+  .payment-body a {
+    color: var(--moss);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(74,124,111,0.3);
+    transition: color 0.15s;
+  }
+  .payment-body a:hover { color: var(--forest); }
+
+  .payment-body strong { color: var(--ink); font-weight: 600; }
+
+  .best-value {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(184,146,90,0.1);
+    border: 1px solid rgba(184,146,90,0.25);
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+
+  .address-block {
+    background: rgba(138,171,158,0.1);
+    border-left: 3px solid var(--sage);
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-top: 6px;
+  }
+
+  @media (max-width: 480px) {
+    .letter { padding: 24px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">ONHP Class Reunion · October 2026</div>
+  <h1>Vancouver <em>Island</em></h1>
+  <div class="hero-sub">Tigh-na-Mara · Parksville, BC · Oct 1–7</div>
+  <div class="hero-divider"></div>
+</div>
+
+<nav class="page-nav">
+  <a href="onhp_welcome.html">Welcome &amp; Itinerary</a>
+  <a href="transport.html">Getting Here</a>
+  <a href="fees.html" class="active">Fees &amp; Payment</a>
+</nav>
+
+<div class="container">
+
+  <div class="letter">
+    <p>Hello, friends!</p>
+    <p>To help us pay for some events up front, I'm asking each member for a deposit of <span class="fee-highlight gold">CAD $500</span> to be paid by the end of May. (A couple of people in our cohort have already put down deposits — thank you!)</p>
+    <p>I'm working hard to keep the total final program fees under <span class="fee-highlight">CAD $1,400</span>. A final amount and a request for the remainder will be shared a month ahead of our reunion.</p>
+    <div class="sign-off">With thanks,<br>Alison</div>
+  </div>
+
+  <div class="section-header" style="margin-top:0;">
+    <h2>Ways to Pay</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="payment-grid">
+
+    <!-- E-Transfer -->
+    <div class="payment-card featured">
+      <div class="payment-header">
+        <div class="payment-number">1</div>
+        <div class="payment-method">E-Transfer</div>
+        <span class="best-value">Easiest</span>
+      </div>
+      <div class="payment-amount">CAD $500</div>
+      <div class="payment-body">
+        For those with Canadian bank accounts, the easiest way is by e-transfer. Send to <a href="mailto:alisonvanrooy@gmail.com">alisonvanrooy@gmail.com</a>.
+      </div>
+    </div>
+
+    <!-- Wise Option 1 -->
+    <div class="payment-card featured">
+      <div class="payment-header">
+        <div class="payment-number">2</div>
+        <div class="payment-method">Wise</div>
+        <span class="best-value">Best value</span>
+      </div>
+      <div class="payment-amount">CAD $500</div>
+      <div class="payment-body">
+        Wise is the cheapest way to send money in other currencies. See <a href="https://wise.com/help/articles/2977959/how-do-i-send-money-with-wise" target="_blank">how to send with Wise</a>, then find Alison by email <a href="mailto:alisonvanrooy@gmail.com">alisonvanrooy@gmail.com</a> or name <strong>Alison Lorette Van Rooy</strong>.
+      </div>
+    </div>
+
+    <!-- Wise Request -->
+    <div class="payment-card featured">
+      <div class="payment-header">
+        <div class="payment-number">3</div>
+        <div class="payment-method">Wise Request</div>
+        <span class="best-value">Best value</span>
+      </div>
+      <div class="payment-amount">CAD $500</div>
+      <div class="payment-body">
+        Prefer to be guided through it? Just <a href="mailto:alisonvanrooy@gmail.com">send Alison an email</a> and she'll have Wise send you a payment request directly.
+      </div>
+    </div>
+
+    <!-- Venmo -->
+    <div class="payment-card">
+      <div class="payment-header">
+        <div class="payment-number">4</div>
+        <div class="payment-method">Venmo / PayPal</div>
+      </div>
+      <div class="payment-amount">USD $380</div>
+      <div class="payment-body">
+        Send USD $380 to Lara via <strong>Venmo (@Lara-Hoyem)</strong> or <strong>PayPal (@LHoyem)</strong>. She'll convert and forward it to Alison in CAD via Wise.
+      </div>
+    </div>
+
+    <!-- US Cheque -->
+    <div class="payment-card">
+      <div class="payment-header">
+        <div class="payment-number">5</div>
+        <div class="payment-method">US Cheque</div>
+      </div>
+      <div class="payment-amount">USD $380</div>
+      <div class="payment-body">
+        Mail a cheque drawn on a US institution, made out to Alison Van Rooy, to:
+        <div class="address-block">
+          2443 Garry Oak Drive<br>
+          Nanoose, BC &nbsp; V9P 9G1<br>
+          Canada
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- /container -->
+
+</body>
+</html>

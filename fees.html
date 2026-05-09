@@ -182,34 +182,55 @@
     opacity: 0.5;
   }
 
-  /* Payment method cards */
-  .payment-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  @media (max-width: 560px) {
-    .payment-grid { grid-template-columns: 1fr; }
-  }
-
-  .payment-card {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 2px 10px var(--shadow);
-    border-top: 3px solid var(--sage);
+  /* Payment rows */
+  .payment-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px var(--shadow);
+    overflow: hidden;
   }
 
-  .payment-card.featured {
-    border-top-color: var(--gold);
+  .payment-row {
+    display: grid;
+    grid-template-columns: 52px 1fr auto;
+    align-items: start;
+    gap: 0;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--mist);
   }
+  .payment-row:last-child { border-bottom: none; }
+
+  .payment-row.wise-group {
+    background: rgba(184,146,90,0.03);
+    flex-direction: column;
+    display: block;
+    padding: 0;
+  }
+
+  .wise-header {
+    display: grid;
+    grid-template-columns: 52px 1fr auto;
+    align-items: center;
+    padding: 20px 24px 12px;
+    border-bottom: 1px dashed rgba(184,146,90,0.2);
+  }
+
+  .wise-sub {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    align-items: start;
+    padding: 14px 24px;
+    gap: 0;
+  }
+  .wise-sub:first-of-type { padding-top: 16px; }
+  .wise-sub:last-of-type { padding-bottom: 20px; }
 
   .payment-number {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background: var(--forest);
     color: var(--white);
@@ -219,12 +240,22 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    margin-top: 2px;
   }
 
-  .payment-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  .payment-number.sub {
+    background: transparent;
+    border: 1.5px solid var(--sage);
+    color: var(--moss);
+    font-size: 11px;
+    width: 24px;
+    height: 24px;
+    margin-top: 1px;
+    margin-left: 4px;
+  }
+
+  .payment-main {
+    padding: 0 16px;
   }
 
   .payment-method {
@@ -232,7 +263,30 @@
     font-size: 20px;
     font-weight: 600;
     color: var(--forest);
+    line-height: 1.2;
   }
+
+  .payment-method.sub-method {
+    font-size: 16px;
+    color: var(--moss);
+    margin-bottom: 3px;
+  }
+
+  .payment-body {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--stone);
+    margin-top: 4px;
+  }
+
+  .payment-body a {
+    color: var(--moss);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(74,124,111,0.3);
+    transition: color 0.15s;
+  }
+  .payment-body a:hover { color: var(--forest); }
+  .payment-body strong { color: var(--ink); font-weight: 600; }
 
   .payment-amount {
     font-size: 13px;
@@ -243,25 +297,10 @@
     border: 1px solid rgba(184,146,90,0.25);
     padding: 3px 10px;
     border-radius: 20px;
-    display: inline-block;
-    margin-bottom: 2px;
+    white-space: nowrap;
+    align-self: start;
+    margin-top: 3px;
   }
-
-  .payment-body {
-    font-size: 14px;
-    line-height: 1.75;
-    color: var(--stone);
-  }
-
-  .payment-body a {
-    color: var(--moss);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(74,124,111,0.3);
-    transition: color 0.15s;
-  }
-  .payment-body a:hover { color: var(--forest); }
-
-  .payment-body strong { color: var(--ink); font-weight: 600; }
 
   .best-value {
     font-size: 10px;
@@ -273,6 +312,22 @@
     border: 1px solid rgba(184,146,90,0.25);
     padding: 2px 8px;
     border-radius: 20px;
+    display: inline-block;
+    margin-top: 4px;
+  }
+
+  .easiest {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--moss);
+    background: rgba(74,124,111,0.08);
+    border: 1px solid rgba(74,124,111,0.2);
+    padding: 2px 8px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 4px;
   }
 
   .address-block {
@@ -283,11 +338,14 @@
     font-size: 13.5px;
     line-height: 1.7;
     color: var(--ink);
-    margin-top: 6px;
+    margin-top: 8px;
   }
 
   @media (max-width: 480px) {
     .letter { padding: 24px 22px; }
+    .payment-row { grid-template-columns: 40px 1fr auto; padding: 16px; }
+    .wise-header { grid-template-columns: 40px 1fr auto; padding: 16px 16px 10px; }
+    .wise-sub { grid-template-columns: 40px 1fr; padding: 10px 16px; }
   }
 </style>
 </head>
@@ -320,74 +378,75 @@
     <div class="section-line"></div>
   </div>
 
-  <div class="payment-grid">
+  <div class="payment-list">
 
     <!-- E-Transfer -->
-    <div class="payment-card featured">
-      <div class="payment-header">
-        <div class="payment-number">1</div>
+    <div class="payment-row">
+      <div class="payment-number">1</div>
+      <div class="payment-main">
         <div class="payment-method">E-Transfer</div>
-        <span class="best-value">Easiest</span>
+        <span class="easiest">Easiest</span>
+        <div class="payment-body">
+          For those with Canadian bank accounts, the easiest way is by e-transfer. Send to <a href="mailto:alisonvanrooy@gmail.com">alisonvanrooy@gmail.com</a>.
+        </div>
       </div>
       <div class="payment-amount">CAD $500</div>
-      <div class="payment-body">
-        For those with Canadian bank accounts, the easiest way is by e-transfer. Send to <a href="mailto:alisonvanrooy@gmail.com">alisonvanrooy@gmail.com</a>.
-      </div>
     </div>
 
-    <!-- Wise Option 1 -->
-    <div class="payment-card featured">
-      <div class="payment-header">
+    <!-- Wise — grouped -->
+    <div class="payment-row wise-group">
+      <div class="wise-header">
         <div class="payment-number">2</div>
-        <div class="payment-method">Wise</div>
-        <span class="best-value">Best value</span>
+        <div class="payment-main">
+          <div class="payment-method">Wise</div>
+          <span class="best-value">Best value in other currencies</span>
+          <div class="payment-body" style="margin-top:6px;">Wise is the cheapest way to send money internationally. Two ways to do it:</div>
+        </div>
+        <div class="payment-amount">CAD $500</div>
       </div>
-      <div class="payment-amount">CAD $500</div>
-      <div class="payment-body">
-        Wise is the cheapest way to send money in other currencies. See <a href="https://wise.com/help/articles/2977959/how-do-i-send-money-with-wise" target="_blank">how to send with Wise</a>, then find Alison by email <a href="mailto:alisonvanrooy@gmail.com">alisonvanrooy@gmail.com</a> or name <strong>Alison Lorette Van Rooy</strong>.
+      <div class="wise-sub">
+        <div class="payment-number sub">2a</div>
+        <div class="payment-main">
+          <div class="payment-method sub-method">Send directly</div>
+          <div class="payment-body">Follow the <a href="https://wise.com/help/articles/2977959/how-do-i-send-money-with-wise" target="_blank">instructions to send with Wise</a>, then find Alison by email <a href="mailto:alisonvanrooy@gmail.com">alisonvanrooy@gmail.com</a> or name <strong>Alison Lorette Van Rooy</strong>.</div>
+        </div>
+      </div>
+      <div class="wise-sub">
+        <div class="payment-number sub">2b</div>
+        <div class="payment-main">
+          <div class="payment-method sub-method">Request payment</div>
+          <div class="payment-body">Prefer to be guided through it? <a href="mailto:alisonvanrooy@gmail.com">Send Alison an email</a> and she'll have Wise send you a payment request directly.</div>
+        </div>
       </div>
     </div>
 
-    <!-- Wise Request -->
-    <div class="payment-card featured">
-      <div class="payment-header">
-        <div class="payment-number">3</div>
-        <div class="payment-method">Wise Request</div>
-        <span class="best-value">Best value</span>
-      </div>
-      <div class="payment-amount">CAD $500</div>
-      <div class="payment-body">
-        Prefer to be guided through it? Just <a href="mailto:alisonvanrooy@gmail.com">send Alison an email</a> and she'll have Wise send you a payment request directly.
-      </div>
-    </div>
-
-    <!-- Venmo -->
-    <div class="payment-card">
-      <div class="payment-header">
-        <div class="payment-number">4</div>
+    <!-- Venmo / PayPal -->
+    <div class="payment-row">
+      <div class="payment-number">3</div>
+      <div class="payment-main">
         <div class="payment-method">Venmo / PayPal</div>
+        <div class="payment-body">
+          Send USD $380 to Lara via <strong>Venmo (@Lara-Hoyem)</strong> or <strong>PayPal (@LHoyem)</strong>. She'll convert and forward it to Alison in CAD via Wise.
+        </div>
       </div>
       <div class="payment-amount">USD $380</div>
-      <div class="payment-body">
-        Send USD $380 to Lara via <strong>Venmo (@Lara-Hoyem)</strong> or <strong>PayPal (@LHoyem)</strong>. She'll convert and forward it to Alison in CAD via Wise.
-      </div>
     </div>
 
     <!-- US Cheque -->
-    <div class="payment-card">
-      <div class="payment-header">
-        <div class="payment-number">5</div>
+    <div class="payment-row">
+      <div class="payment-number">4</div>
+      <div class="payment-main">
         <div class="payment-method">US Cheque</div>
-      </div>
-      <div class="payment-amount">USD $380</div>
-      <div class="payment-body">
-        Mail a cheque drawn on a US institution, made out to Alison Van Rooy, to:
-        <div class="address-block">
-          2443 Garry Oak Drive<br>
-          Nanoose, BC &nbsp; V9P 9G1<br>
-          Canada
+        <div class="payment-body">
+          Mail a cheque drawn on a US institution, made out to Alison Van Rooy, to:
+          <div class="address-block">
+            2443 Garry Oak Drive<br>
+            Nanoose, BC &nbsp; V9P 9G1<br>
+            Canada
+          </div>
         </div>
       </div>
+      <div class="payment-amount">USD $380</div>
     </div>
 
   </div>

@@ -265,35 +265,6 @@
     border-bottom-color: var(--gold);
   }
 
-  .event-pill {
-    display: inline-block;
-    font-size: 10.5px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 2px 9px;
-    border-radius: 20px;
-    margin-left: 7px;
-    vertical-align: middle;
-    position: relative;
-    top: -1px;
-  }
-  .pill-fee {
-    background: rgba(184,146,90,0.12);
-    color: var(--gold);
-    border: 1px solid rgba(184,146,90,0.3);
-  }
-  .pill-free {
-    background: rgba(138,171,158,0.15);
-    color: var(--moss);
-    border: 1px solid rgba(138,171,158,0.35);
-  }
-  .pill-optional {
-    background: rgba(107,107,96,0.08);
-    color: var(--stone);
-    border: 1px solid rgba(107,107,96,0.2);
-  }
-
   .week-note {
     background: rgba(138,171,158,0.1);
     border-left: 3px solid var(--sage);
@@ -377,44 +348,6 @@
   .fees-card p:last-child { margin-bottom: 0; }
   .fees-card strong { color: var(--gold-light); }
 
-  /* ── REGISTER CTA ── */
-  .cta-bar {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 28px 32px;
-    box-shadow: 0 2px 16px var(--shadow);
-    margin-top: 48px;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .cta-text { flex: 1; min-width: 200px; }
-  .cta-text h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    color: var(--forest);
-    margin-bottom: 4px;
-  }
-  .cta-text p { font-size: 14px; color: var(--stone); line-height: 1.6; }
-  .btn-cta {
-    display: inline-block;
-    padding: 14px 32px;
-    background: var(--forest);
-    color: var(--white);
-    font-family: 'Jost', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-    box-shadow: 0 4px 14px rgba(44,74,62,0.25);
-    white-space: nowrap;
-  }
-  .btn-cta:hover { background: var(--moss); transform: translateY(-1px); }
-
   @media (max-width: 480px) {
     .time-slot { grid-template-columns: 90px 1fr; }
     .letter { padding: 24px 22px; }
@@ -441,8 +374,7 @@
   <!-- Letter -->
   <div class="letter">
     <p>Hello, friends,</p>
-    <p>Please see below the latest tentative itinerary for our time together. It will surely change, but this is intended to whet your appetite for the adventure. I've also included a few other topics of interest — do let me know if there are other things you'd like to hear about.</p>
-    <p>If you haven't already, please visit the <a href="fees.html">fees &amp; payment</a> page to make an initial $500 CAD deposit for the program costs.  Closer to our gathering, I'll reach out with: confirmation of your October 5th activity choices, information about dietary restrictions, and scheduling for airport and ferry pick-ups/drop-offs.</p>
+    <p>Here is the latest plan for our time together. I've also included a few other topics of interest — do let me know if there are other things you'd like to hear about.</p>
     <div class="sign-off">
       With thanks, and anticipation!<br>
       Alison (and team Catherine and Lara)
@@ -555,7 +487,7 @@
       <div class="time-slot">
         <div class="slot-time">Morning</div>
         <div class="slot-content">
-          Trip to <a href="https://www.visitparksvillequalicumbeach.com/things-to-do/parks-nature/cathedral-grove/#jlthings-to-see" target="_blank">Cathedral Grove</a> — home to ancient old-growth giant trees, and art class based on your Cathedral Grove experience at <a href="https://www.theoldschoolhouse.org/" target="_blank">The Old School House</a> art centre in Qualicum Beach
+          Trip to <a href="https://www.visitparksvillequalicumbeach.com/things-to-do/parks-nature/cathedral-grove/#jlthings-to-see" target="_blank">Cathedral Grove</a> — home to ancient old-growth giant trees — and painting class inspired by forests at <a href="https://www.theoldschoolhouse.org/" target="_blank">The Old School House</a> art centre in Qualicum Beach
         </div>
       </div>
       <div class="time-slot">
@@ -599,14 +531,11 @@
       </div>
       <div class="time-slot">
         <div class="slot-time">Lunch</div>
-        <div class="slot-content"><a href="https://www.lighthousebistro.ca/bistro" target="_blank">Lighthouse Bistro</a> — watch the float planes coming into Nanaimo Harbour</div>
+        <div class="slot-content"><a href="https://www.lighthousebistro.la/bistro" target="_blank">Lighthouse Bistro</a> — watch the float planes coming into Nanaimo Harbour</div>
       </div>
       <div class="time-slot">
         <div class="slot-time">Afternoon</div>
-        <div class="slot-content">
-          Free time<br>
-          <span style="color:var(--stone);">Optional: Afternoon tea at the Black Goose Inn</span>
-        </div>
+        <div class="slot-content" style="color:var(--stone);">Free time</div>
       </div>
       <div class="time-slot">
         <div class="slot-time">Early Evening</div>
@@ -633,10 +562,9 @@
       <div class="time-slot">
         <div class="slot-time">Morning</div>
         <div class="slot-content">
-          <strong>Activity One — Kayaking</strong><br>
-          <span style="color:var(--stone);font-size:13.5px;">Group I: 8:00–11:00am &nbsp;·&nbsp; Group II: 11:00am–2:00pm</span><br><br>
-          <strong>Activity Two — Fishing or Sightseeing Boat</strong><br>
-          <span style="color:var(--stone);font-size:13.5px;">Fishing Boat Group or Sightseeing Boat Group (early departure, TBC)</span>
+          <strong>Kayaking</strong> — Tandem kayak tour around Saysutshun Island, Nanaimo Harbour. Leave hotel at 9:30am, tour from 10:00am–2:00pm.<br><br>
+          <strong>Fishing</strong> — Fishing excursion from French Creek with <a href="https://www.frenchcreekcharters.com/" target="_blank">French Creek Charters</a> — Time TBC<br><br>
+          <strong>Sightseeing Boat</strong> — Sightseeing excursion from French Creek with <a href="https://www.frenchcreekcharters.com/" target="_blank">French Creek Charters</a> — Time TBC
         </div>
       </div>
       <div class="time-slot">
@@ -644,16 +572,10 @@
         <div class="slot-content">Picnic provided</div>
       </div>
       <div class="time-slot">
-        <div class="slot-time">Afternoon</div>
-        <div class="slot-content">
-          <span style="color:var(--stone);">Optional: 3:00pm onward at Alison and Gordon's house</span>
-        </div>
-      </div>
-      <div class="time-slot">
         <div class="slot-time">Early Evening</div>
         <div class="slot-content">
           <strong>5:00–7:00pm</strong> — Fish BBQ and dinner at Alison and Gordon's house (with non-fish options)<br>
-          <em style="color:var(--stone);font-size:13.5px;">Theme: What's in your year and how can the group help?</em>
+          <em style="color:var(--stone);font-size:13.5px;">Theme: What's in your year and how can the group help? AND/OR Parlour Games</em>
         </div>
       </div>
       <div class="time-slot">
@@ -681,7 +603,7 @@
         <div class="slot-time">Afternoon</div>
         <div class="slot-content">
           Private whale watching tour with <a href="https://oceanecoventures.com/parksville/" target="_blank">Ocean Ecoventures</a><br>
-          <span style="color:var(--stone);">Optional: <a href="https://pentlatchgallery.com/" target="_blank">Pentlatch Gallery</a> (Indigenous arts and crafts) and/or <a href="https://stjeans.com/" target="_blank">St. Jean's Cannery</a> for smoked fish — great for gifts and easy to pack</span>
+          <span style="color:var(--stone);">Optional: <a href="https://pentlatchgallery.com/" target="_blank">Pentlatch Gallery</a> (Indigenous-owned arts and crafts store) — great for gifts!</span>
         </div>
       </div>
       <div class="time-slot">
@@ -720,8 +642,7 @@
 
   <div class="fees-card">
     <h3>What's covered</h3>
-    <p>The program fee covers excursion costs, lunches, three suppers, evening hors d'oeuvres and drinks, and any extra costs for local transportation. Several of us will have cars, so we may need to rent only one or two additional vehicles.</p>
-    <p>The total cost is not yet finalized but will be modest. <strong>In May, we requested an initial payment of CAD $500 per participant</strong> and if you haven't sent that yet, please do it at your earliest convenience. More details to come.</p>
+    <p>The <strong>CAD $1,200 program fee</strong> covers excursion costs, presenters' gifts, lunches (and one brunch), three suppers, various treats, evening hors d'oeuvres and drinks, and gas for local transportation.</p>
   </div>
 
   <!-- Good to Know -->
@@ -773,7 +694,7 @@
 
   </div>
 
-
+</div><!-- /container -->
 
 <script>
   function toggleDay(header) {
@@ -784,10 +705,9 @@
     arrow.classList.toggle('open', !isOpen);
   }
 
-  // Highlight active nav link based on current page
   const currentPage = window.location.pathname.split('/').pop();
   document.querySelectorAll('.page-nav a').forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === currentPage || 
+    a.classList.toggle('active', a.getAttribute('href') === currentPage ||
       (currentPage === '' && a.classList.contains('active')));
   });
 </script>
